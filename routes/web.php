@@ -15,4 +15,4 @@ Route::get('/',  'PagesController@index');
 
 Route::get('/portfolio', 'PagesController@portfolio');
 
-Route::resource('blog', 'PostsController');
+Route::resource('blog', 'PostsController'); 

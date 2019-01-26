@@ -7,12 +7,13 @@ use App\Post;
 class PostsController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the resource. 
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
+        // $posts = Post::orderBy('id', 'desc')->paginate(1); PAGINATION PART
         $posts = Post::all();
         return view('posts.index')->with('posts', $posts);
     }
@@ -46,7 +47,8 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Post::find($id);
+        return view('posts.show')->with('post', $post);
     }
 
     /**

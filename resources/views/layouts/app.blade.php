@@ -8,7 +8,7 @@
     <title>{{ config('app.name') }}</title>
 </head>
 <body>
-    @include('include.navbar')
+    @include('include.navbar') 
     @yield('content')
 </body>
 </html>

@@ -7,9 +7,10 @@
             <h2><a href="/blog/{{$post->id}}">{{$post->title}}</a></h2>
             <small>{{$post->created_at}}</small><br>
             <img src="{{$post->background}}" width="200px">
+            <hr>
         @endforeach
         {{-- {{$posts->links()}} --}} 
     @else
-        <h1>No posts found</h1>
+        <h2>No posts found</h2>
     @endif
 @endsection

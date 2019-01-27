@@ -3,3 +3,7 @@
     <li><a href="/portfolio">Portfolio</a></li>
     <li><a href="/blog">Blog</a></li> 
 </ul>
+
+<ul class="nav">
+    <li><a href="/blog/create">Create Post</a></li>
+</ul>

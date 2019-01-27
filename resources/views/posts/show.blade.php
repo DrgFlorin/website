@@ -6,6 +6,6 @@
     <h1>{{ $post->title }}</h1>
     <p>{{ $post->created_at }}</p>
     <hr>
-    <img src="{{ $post->background }}" witdh="500px">
-    <p>{{ $post->body }}</p>
+    <img src="{{ $post->background }}" width="1000px">
+    <p>{!! $post->body !!}</p>
 @endsection

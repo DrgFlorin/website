@@ -14,7 +14,7 @@ class PostsController extends Controller
     public function index()
     {
         // $posts = Post::orderBy('id', 'desc')->paginate(1); PAGINATION PART
-        $posts = Post::orderBy('id', 'desc')->get();
+        $posts = Post::orderBy('id', 'desc')->paginate(2);
         return view('posts.index')->with('posts', $posts);
     }
 
@@ -25,7 +25,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        //
+        return view('posts.create');
     }
 
     /**
@@ -36,9 +36,21 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $this->validate($request, [
+            'title' => 'required',
+            'background' => 'required',
+            'body' => 'required'
+        ]);
 
+        // Create Post
+        $post = new Post;
+        $post->title  = $request->input('title');
+        $post->background = $request->input('background');
+        $post->body = $request->input('body');
+        $post->save();
+
+        return redirect('/blog')->with('success', 'Post Created');
+    }
     /**
      * Display the specified resource.
      *

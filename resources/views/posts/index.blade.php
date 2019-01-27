@@ -9,7 +9,7 @@
             <img src="{{$post->background}}" width="200px">
             <hr>
         @endforeach
-        {{-- {{$posts->links()}} --}} 
+        {{$posts->links()}} 
     @else
         <h2>No posts found</h2>
     @endif

@@ -16,3 +16,6 @@ Route::get('/',  'PagesController@index');
 Route::get('/portfolio', 'PagesController@portfolio');
 
 Route::resource('blog', 'PostsController'); 
+Auth::routes();
+
+Route::get('/dashboard', 'DashboardController@index');
